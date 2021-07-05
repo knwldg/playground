@@ -6,11 +6,11 @@ def inorder_traversal(root) -> [int]:
 
     def recurse(node):
         if node:
-            recurse(node)
+            recurse(node.left)
             results.append(node.val)
-            recurse(node)
-        recurse(root)
+            recurse(node.right)
 
+    recurse(root)
     return results
 
 
@@ -22,3 +22,5 @@ if __name__ == '__main__':
     tree.root.left = TreeNode(2)
     tree.root.left.left = TreeNode(4)
     tree.root.left.right = TreeNode(5)
+
+    print(inorder_traversal(tree.root))
