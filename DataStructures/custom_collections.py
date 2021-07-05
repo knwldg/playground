@@ -181,20 +181,54 @@ class Stack:
 
 
 class TreeNode:
-    val = None
-    left = None
-    right = None
-
-    def __init__(self, value):
+    def __init__(self, value=0, left=None, right=None):  # better initialization style
         self.val = value
+        self.left = left
+        self.right = right
 
     def __repr__(self):
         return str(self.val)
 
 
 class Tree:
-    def __init__(self):
-        self.root = TreeNode(None)
+    def __init__(self, value=0):
+        self.root = TreeNode(value)
+
+    def traverse_preorder(self):
+        results = []
+
+        def recurse(node):
+            if node:
+                results.append(node.val)
+                recurse(node.left)
+                recurse(node.right)
+
+        recurse(self.root)
+        return results
+
+    def traverse_inorder(self):
+        results = []
+
+        def recurse(node):
+            if node:
+                recurse(node.left)
+                results.append(node.val)
+                recurse(node.right)
+
+        recurse(self.root)
+        return results
+
+    def traverse_postorder(self):
+        results = []
+
+        def recurse(node):
+            if node:
+                recurse(node.left)
+                recurse(node.right)
+                results.append(node.val)
+
+        recurse(self.root)
+        return results
 
     def postorder_traversal_iterative(self):  # i know this is usually done recursively, but I dislike recursion
         stack = Stack()
