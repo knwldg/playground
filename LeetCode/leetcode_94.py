@@ -10,7 +10,8 @@ def inorder_traversal(root) -> [int]:
             results.append(node.val)
             recurse(node)
         recurse(root)
-        return results
+
+    return results
 
 
 if __name__ == '__main__':
