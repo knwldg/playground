@@ -1,4 +1,4 @@
-def isPalindrome(s: str) -> bool:
+def is_palindrome(s: str) -> bool:
     chars = [c for c in s.lower() if 97 <= ord(c) <= 122 or 48 <= ord(c) <= 57]
 
     if len(chars) == 1:
@@ -12,4 +12,4 @@ def isPalindrome(s: str) -> bool:
 
 
 if __name__ == '__main__':
-    print(isPalindrome("A man, a plan, a canal: Panama"))
+    print(is_palindrome("A man, a plan, a canal: Panama"))
