@@ -1,4 +1,4 @@
-def romanToInt(s: str) -> int:
+def roman_to_int(s: str) -> int:
     values = {
         "I": 1,
         "V": 5,
@@ -23,4 +23,4 @@ def romanToInt(s: str) -> int:
 
 
 if __name__ == '__main__':
-    print(romanToInt("XIV"))
+    print(roman_to_int("XIV"))
